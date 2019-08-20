@@ -1,4 +1,4 @@
-## LoftSchool example project
+## Example Project
 
 ### Доступные команды
 
