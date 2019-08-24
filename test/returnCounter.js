@@ -6,6 +6,6 @@ function returnCounter(number = 0) {
 
 var f = returnCounter();
 
-console.log(f()); // выведет 11
-console.log(f()); // выведет 12
-console.log(f()); // выведет 13
+console.log(f()); // выведет 0
+console.log(f()); // выведет 1
+console.log(f()); // выведет 2
