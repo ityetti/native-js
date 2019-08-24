@@ -5,8 +5,8 @@ function sum(a, b) {
 let newSum = bindFunction(sum, 2, 4);
 
 function bindFunction(fn, ...args) {
-    return function fn() {
-        return args.reduce(sum)
+    return function() {
+        return fn.apply(this, args);
     }
 }
 
