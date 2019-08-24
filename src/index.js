@@ -98,9 +98,8 @@ function returnArgumentsArray(...args) {
    console.log(newSum()) выведет 6
  */
 function bindFunction(fn, ...args) {
-    return function fn() {
-        // We must set 'sum' as argument for reduce
-        return args.reduce()
+    return function() {
+        return fn.apply(this, args);
     }
 }
 
