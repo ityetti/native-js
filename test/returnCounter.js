@@ -1,6 +1,4 @@
-function returnCounter(number) {
-    number = 0;
-
+function returnCounter(number = 0) {
     return function f() {
         return number++;
     }
