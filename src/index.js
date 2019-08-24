@@ -61,7 +61,7 @@ function returnFnResult(fn) {
  */
 function returnCounter(number = 0) {
     return function f() {
-        return number++;
+        return ++number;
     }
 }
 
