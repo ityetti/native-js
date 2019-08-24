@@ -4,7 +4,7 @@ function returnCounter(number = 0) {
     }
 }
 
-var f = returnCounter(10);
+var f = returnCounter();
 
 console.log(f()); // выведет 11
 console.log(f()); // выведет 12
