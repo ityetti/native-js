@@ -62,7 +62,7 @@ function upperProps(obj) {
 
     let arr = Object.keys(obj);
 
-    arr.forEach(function(item) {
+    arr.forEach(function (item) {
         result.push(item.toUpperCase());
     });
 
@@ -78,8 +78,16 @@ function upperProps(obj) {
 function slice(array, from, to) {
     let result = [];
 
-    for (let i = from; i < to; i++) {
-        result.push(array[i]);
+    if (from < 0) {
+        let newArrayLegth = array.length + from;
+
+        for (let i = newArrayLegth; i < array.length; i++) {
+            result.push(array[i]);
+        }
+    } else {
+        for (let i = from; i < to; i++) {
+            result.push(array[i]);
+        }
     }
 
     return result;
@@ -95,6 +103,8 @@ function createProxy(obj) {
     return new Proxy(obj, {
         set: function (target, prop, value) {
             target[prop] = Math.pow(value, 2);
+
+            return true;
         }
     });
 }
