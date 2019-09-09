@@ -55,7 +55,7 @@ function findAllPSiblings(where) {
     let arr = [];
 
     for (let i = 0; i < w.length - 1; i++) {
-        if (w[i].nextElementSibling.nodeName === 'P') {
+        if (w[i].nextElementSibling.nodeName && w[i].nextElementSibling.nodeName === 'P') {
             arr.push(w[i]);
         }
     }
