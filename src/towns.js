@@ -101,8 +101,27 @@ loadTowns().then(res => {
     filterBlock.style.display = 'block';
 });
 
-filterInput.addEventListener('keyup', function() {
-    filterResult.innerHTML = filterInput.value ? cities.filter(item => isMatching(item.name, filterInput.value)).map(item => `${item.name}`).join('') : '';
+filterInput.addEventListener('keyup', function () {
+    let value = this.value.trim();
+    let filteredList = [];
+
+    if (value !== '') {
+        cities.forEach(city => {
+            if (isMatching(city.name, value)) {
+                filteredList.push(city.name);
+            }
+        });
+        if (filteredList.length > 0) {
+            filteredList.forEach(item => {
+                let li = document.createElement('li');
+
+                li.textContent = item;
+                filterResult.appendChild(li);
+            })
+        }
+    } else {
+        filterResult.innerHTML = '';
+    }
 });
 
 export {
